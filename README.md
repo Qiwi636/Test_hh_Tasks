@@ -4,4 +4,4 @@ task_1: Написать скрипт, вставляющий +,-, либо ни
 example = 98-7+65+43+2-1-0=200\
 Result:
 
-![image](https://github.com/Qiwi636/Test_hh_Tasks/assets/60035647/69c76b93-b821-4623-bbd2-b14c0a0497de)
+![image](https://github.com/Qiwi636/Test_hh_Tasks/assets/60035647/7bdb419f-382b-46fd-ab15-52e7fbf56b02)
