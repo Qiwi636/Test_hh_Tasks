@@ -19,20 +19,24 @@ class EquationFinder:
 
     def __init__(self, result_aim: int):
         self.aim = result_aim
+        self.max_iter = 10000
         self.list_len = None
+        self.results = []
 
     @measure_execution_time
     def processing(self, sequence: str):
         self.list_len = len(sequence)
-        try_value = 1
-        while True:
+        try_value = 0
+        while self.max_iter > try_value:
             res_stack = self._generate_rnd_stack(sequence)
             res_value = self._calculate_expression(res_stack)
 
             if res_value == self.aim:
-                print("Result expression: " + ''.join([str(x) for x in res_stack]) + f'={self.aim}')
-                print(f"Tries: {try_value}")
-                break
+                expression_str = ''.join([str(x) for x in res_stack])
+
+                if expression_str not in self.results:
+                    self.results.append(expression_str)
+
             try_value += 1
 
     def _generate_rnd_stack(self, sequence: str):
@@ -61,7 +65,7 @@ class EquationFinder:
         return expression_stack
 
     @staticmethod
-    def _calculate_expression(stack):
+    def _calculate_expression(stack: list):
         res = stack[0]
 
         for index in range(1, len(stack), 2):
@@ -72,6 +76,10 @@ class EquationFinder:
 
         return res
 
+    def print_result(self):
+        print(f"Results for {self.max_iter} tries:")
+        [print(x) for x in self.results]
+
 
 if __name__ == "__main__":
     res_aim = 200
@@ -79,3 +87,4 @@ if __name__ == "__main__":
 
     e_finder = EquationFinder(res_aim)
     e_finder.processing(start_sequence)
+    e_finder.print_result()
