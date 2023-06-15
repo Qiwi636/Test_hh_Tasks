@@ -8,5 +8,5 @@ Result:
 
 task_2:
 
-![image](https://github.com/Qiwi636/Test_hh_Tasks/assets/60035647/240f9e51-3929-4c40-9819-957fda762426)
+![image](https://github.com/Qiwi636/Test_hh_Tasks/assets/60035647/21164336-1749-4c30-a427-42613aa3d3db)
 
